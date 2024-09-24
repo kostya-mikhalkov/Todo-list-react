@@ -1,0 +1,41 @@
+body {
+    background-color: rgba(255, 252, 217, 0.74);
+}
+
+.todo {
+    &_enter {
+        width: 90%; /* Занимает 90% ширины экрана */
+        max-width: 800px; /* Максимальная ширина для больших экранов */
+        margin: 0 auto; /* Центрирует приложение */
+        min-height: 100vh; /* Минимальная высота для заполнения экрана */
+        padding: 20px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 40px;
+        background-color: #5d5fef;;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .todo_enter {
+      width: 60%; /* Для планшетов и больше — можно уменьшить ширину */
+    }
+  }
+
+//   .todo {
+//     &_enter {
+//         width: 90%; /* Занимает 90% ширины экрана */
+//         max-width: 800px; /* Максимальная ширина для больших экранов */
+//         margin: 0 auto; /* Центрирует приложение */
+//         min-height: 100vh; /* Минимальная высота для заполнения экрана */
+//         padding: 20px;
+//         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+//         border-radius: 40px;
+//         background-color: #5d5fef;;
+//     }
+//   }
+  
+//   @media (min-width: 768px) {
+//     .todo_enter {
+//       width: 60%; /* Для планшетов и больше — можно уменьшить ширину */
+//     }
+//   }
