@@ -1,25 +1,34 @@
 body {
+    height: 100vh;
     background-color: rgba(255, 252, 217, 0.74);
+    align-content: center;
 }
 
 .todo {
     &_enter {
-        width: 90%; /* Занимает 90% ширины экрана */
-        max-width: 800px; /* Максимальная ширина для больших экранов */
+        width: 400px;
+        height: 500px;
         margin: 0 auto; /* Центрирует приложение */
-        min-height: 100vh; /* Минимальная высота для заполнения экрана */
-        padding: 20px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        border-radius: 40px;
-        background-color: #5d5fef;;
+        border-radius: 10px;
+        background:
+        linear-gradient(
+        rgba(35,43,85,0.75),
+        rgba(35,43,85,0.95))
+    }
+    &_list {
+        padding-top: 40px;
+        display: flex;
+        gap: 20px;
+    }
+    &_item {
+        color: aliceblue;
+        list-style-type: none;
+        font-size: 22px;
+        cursor: pointer;
     }
   }
   
-  @media (min-width: 768px) {
-    .todo_enter {
-      width: 60%; /* Для планшетов и больше — можно уменьшить ширину */
-    }
-  }
 
 //   .todo {
 //     &_enter {

@@ -1,0 +1,44 @@
+.input_styling {
+    width: 300px;
+    height: 35px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,.2);
+}
+.label_styling {
+    color: aliceblue;
+    font-size: 14px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 70px;
+    margin-left: 40px;
+}
+
+.slider {
+    position: relative;
+    width: 65px; 
+    height: 30px;
+    background: rgba(255,255,255,.2);
+    border-radius: 15px;
+    text-align: right;
+    cursor: pointer;
+    &_elem {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.7);
+    }
+    &_text {
+        text-align: right;
+    }
+}
