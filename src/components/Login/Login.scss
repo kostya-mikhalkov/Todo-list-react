@@ -13,32 +13,89 @@
 }
 
 .login {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 70px;
+    margin-top: 40px;
     margin-left: 40px;
+    &_btn {
+        border: none;
+        width: 316px;
+        height: 35px;
+        border-radius: 20px;
+        background: rgba(15, 49, 238, 0.849);
+        color: aliceblue;
+        cursor: pointer;
+    }
+    &_line {
+        width: 316px;
+        height: 2px;
+        background: rgba(255,255,255,.2);
+        margin-top: 30px;
+    }
 }
 
 .slider {
     position: relative;
     width: 65px; 
     height: 30px;
-    background: rgba(255,255,255,.2);
     border-radius: 15px;
-    text-align: right;
+    color: aliceblue;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease-in;
+    &_disagree {
+        text-align: left;
+        background: rgba(255,255,255,.2);
+    }
+    &_agree {
+        text-align: right;
+        background: rgba(15, 49, 238, 0.849);
+    }
     &_elem {
         position: absolute;
-        top: 50%;
+        top: 10px;
         left: 10px;
-        transform: translateY(-50%);
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background: rgba(255,255,255,.7);
+        transition: all 0.3s ease-in;
+        &_agree {
+            transform: translateX(35px);
+        }
+        &_disagree {
+            transform: translateX(0px);
+        }
     }
     &_text {
-        text-align: right;
+        display: block;
+        font-size: 14px;
+        transition: all 0.3s ease-in;
+        &_disagree {
+            text-align: right;
+            padding-right: 10px;
+            padding-top: 4px;
+        }
+        &_agree {
+            text-align: left;
+            padding-left: 10px;
+            padding-top: 4px;
+        }
+    }
+    &_title {
+        position: absolute;
+        top: 216px;
+        left: 140px;
+        width: 125px;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: aliceblue;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        &:hover {
+            color: rgba(233, 214, 132, 0.822);
+        }
     }
 }
