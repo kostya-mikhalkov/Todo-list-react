@@ -14,6 +14,11 @@
         background-color: #f0f8ff; 
     }
 }
+.input_error {
+    &:focus {
+        border: 2px solid red;
+    }
+}
 .label_styling {
     color: aliceblue;
     font-size: 14px;
