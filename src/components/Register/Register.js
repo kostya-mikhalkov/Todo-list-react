@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+
+import { MyContext } from '../Context/MyContext';
+import { registrationUser } from '../services/authService';
 
 import './Register.scss';
 
@@ -9,6 +12,20 @@ const Register = () => {
        const [confirmPassword, setConfirmPassword] = useState('');
        const [error, setError] = useState('');
        const [errorEquals, setErrorEquals] = useState('');
+
+       const {state, setState} = useContext(MyContext);
+       
+       const handleRegister = (e) => {
+              e.preventDefault();
+
+              if (!error) {
+                     registrationUser(login, password)
+                     setLogin('');
+                     setEmail('');
+                     setPassword('');
+                     setConfirmPassword('');
+              }
+       }
 
        const checkedEmail = (str) => {
               const regExp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
@@ -32,7 +49,8 @@ const Register = () => {
           }
 
     return (
-        <form className='register'>
+        <form className='register'
+              onSubmit={handleRegister}>
             <label htmlFor="fullname"
                    className='label_styling'>
                     FULL NAME
