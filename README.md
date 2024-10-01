@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CLONE MY REPOSITORY
+Clone my repository and use json-server, but run it on port 5000 (json-server --watch db.json --port 5000).
 
 ## Available Scripts
 
