@@ -40,6 +40,8 @@ const useRegistrationUser = () => {
                 },
                 body: JSON.stringify(user),
             });
+    
+            const data = await response.json();
             setLoading(false);
             return true;  // Возвращаем true при успешной регистрации
         } catch (error) {
