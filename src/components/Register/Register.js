@@ -1,9 +1,9 @@
-import { useState, useContext } from 'react';
-import { MyContext } from '../Context/MyContext';
+import { useState, useEffect } from 'react';
 import useRegistrationUser from '../services/authService';
 
 import './Register.scss';
-import spinner from '../../assets/spinner.gif'; // Импорт спиннера
+import spinner from '../../assets/spinner.gif';
+import completeGif from '../../assets/complete.gif';
 
 const Register = () => {
     const [login, setLogin] = useState('');
@@ -12,19 +12,31 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [errorEquals, setErrorEquals] = useState('');
-    const { loading, error: registrationError, registrationUser } = useRegistrationUser(); // Использование состояния загрузки
+    const { loading, error: registrationError, registrationUser } = useRegistrationUser();
+    const [complete, setComplete] = useState(false);
 
-    const { state, setState } = useContext(MyContext);
+    useEffect(() => {
+       const timer = setTimeout(() => {
+              setComplete(false)
+       }, 3000)
+       return () => clearTimeout(timer);
+    }, [complete])
 
-    const handleRegister = (e) => {
+     const handleRegister = (e) => {
         e.preventDefault();
 
         if (!error) {
-            registrationUser(login, password);
-            setLogin('');
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('');
+              const success =  registrationUser(login, password); 
+              if (success) {
+                  setLogin('');
+                  setEmail('');
+                  setPassword('');
+                  setConfirmPassword('');
+                 
+              }
+        }
+        if (registrationError) {
+            setComplete(true); 
         }
     };
 
@@ -55,8 +67,12 @@ const Register = () => {
                 <div className="spinner-container">
                     <img src={spinner} alt="Loading..." />
                 </div>
-            ) : (
-                <>
+            ) : 
+            
+           complete ? <img src={completeGif}
+                           className='complete'
+                           alt={'img'}/> : (
+                <>   
                     <label htmlFor="fullname" className='label_styling'>
                         FULL NAME
                     </label>
